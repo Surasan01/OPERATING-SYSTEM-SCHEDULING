@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Scheduling Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Process Scheduling Simulator</h1>
+        
+        <div class="controls">
+            <button id="generateProcesses">Generate Random Processes</button>
+            <button id="runSimulation">Run All Simulations</button>
+            <button id="addProcess">Add Custom Process</button>
+            <button id="reset">Reset</button>
+        </div>
+
+        <!-- Input Form for Custom Process -->
+        <div id="processInput" style="display: none;">
+            <h2>Add Process</h2>
+            <label for="arrivalTime">Arrival Time:</label>
+            <input type="number" id="arrivalTime" min="0" required>
+            <label for="burstTime">Burst Time:</label>
+            <input type="number" id="burstTime" min="1" required>
+            <label for="priority">Priority:</label>
+            <input type="number" id="priority" min="1" required>
+            <button id="submitProcess">Submit Process</button>
+        </div>
+
+        <!-- Display Generated or Added Processes -->
+        <div id="processesContainer">
+            <!-- Processes will be displayed here -->
+        </div>
+        
+        <!-- Simulation Results -->
+        <div id="simulationResults">
+            <h2>Simulation Results</h2>
+            <div id="fcfsResult" class="algorithm-result">
+                <h3>First-Come, First-Served (FCFS)</h3>
+                <div class="gantt-chart"></div>
+                <div class="metrics"></div>
+            </div>
+            <div id="rrResult" class="algorithm-result">
+                <h3>Round-Robin (RR)</h3>
+                <div class="gantt-chart"></div>
+                <div class="metrics"></div>
+            </div>
+            <div id="sjfResult" class="algorithm-result">
+                <h3>Shortest Job First (SJF)</h3>
+                <div class="gantt-chart"></div>
+                <div class="metrics"></div>
+            </div>
+            <div id="srtfResult" class="algorithm-result">
+                <h3>Shortest Remaining Time First (SRTF)</h3>
+                <div class="gantt-chart"></div>
+                <div class="metrics"></div>
+            </div>
+            <div id="priorityResult" class="algorithm-result">
+                <h3>Priority</h3>
+                <div class="gantt-chart"></div>
+                <div class="metrics"></div>
+            </div>
+            <div id="hrrnResult" class="algorithm-result">
+                <h3>Highest Response Ratio Next (HRRN)</h3>
+                <div class="gantt-chart"></div>
+                <div class="metrics"></div>
+            </div>
+            <div id="mlqResult" class="algorithm-result">
+                <h3>Multilevel Queue with Feedback</h3>
+                <div class="gantt-chart"></div>
+                <div class="metrics"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
